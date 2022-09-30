@@ -1,0 +1,27 @@
+pipeline{
+         agent {
+                node {
+                      label 'buil-in'
+                      customWorkspace "/mnt"
+                     }
+               }
+         stages{ 
+    	        stage('CLEAN'){
+                               steps{
+									sh "rm -rf *"
+                                    }
+                              }
+                stage('clone'){
+				    		  steps{
+					    			sh "git clone https://github.com/Kunaldange0071/assignment-2.git"
+						    	   }
+                             }
+		        stage('build-image'){
+                                     steps{
+                                           dir ('/mnt'){
+                                                        
+                                                        }
+                                           }
+                                    }    
+            }      
+       }
